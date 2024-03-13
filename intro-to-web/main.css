@@ -21,6 +21,10 @@
   margin: 20px;
 }
 
+.headerText {
+  color: #1EB6EF;
+}
+
 * {
   margin: 0;
   padding: 0;
