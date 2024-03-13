@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+.navigation{
+    height: 10vh;
+    background-color: $color-backgorund;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px, 20px;
+    margin: 40px;
+
+    .navButton{
+        display: block;
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        color: $color-primary;
+        border-radius: 10px;
+        border-color: $color-primary;
+        border-style: solid;
+        font-size: 30px;
+        margin: 20px;
+    }
+}
