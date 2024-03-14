@@ -18,11 +18,116 @@
   border-color: #384065;
   border-style: solid;
   font-size: 30px;
-  margin: 20px;
+  margin: 0, auto;
+  text-decoration: none;
+}
+
+.main {
+  padding: 40px;
 }
 
 .headerText {
   color: #1EB6EF;
+  text-align: center;
+  font-size: 50px;
+  text-wrap: break-word;
+  margin: 60px;
+}
+
+.pictureOfPhone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.blueButton {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #384065;
+  color: white;
+  border-radius: 10px;
+  font-size: 30px;
+  margin: 20px;
+  text-decoration: none;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.bodyTextandButton {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 60px;
+}
+.bodyTextandButton .heading {
+  font-weight: bold;
+  margin-bottom: 60px;
+  font-size: 40px;
+}
+.bodyTextandButton .subHeadingOne {
+  color: #1EB6EF;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+.bodyTextandButton .bodyText {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+.bodyTextandButton .hereYouFind {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.picsAndText {
+  margin-bottom: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 25px;
+}
+.picsAndText .boldText {
+  font-weight: 500;
+}
+.picsAndText .italicsText {
+  font-style: italic;
+}
+.picsAndText .penguinPics {
+  width: auto;
+}
+.picsAndText .infoWithPicsLeftAlign {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+}
+.picsAndText .infoWithPicsRightAlign {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FDFDDB;
+  padding: 30px;
+}
+.footer .footerItem {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: normal;
+  text-decoration: none;
+  background-color: #FDFDDB;
 }
 
 * {
