@@ -57,6 +57,10 @@
   margin-bottom: 60px;
 }
 
+.penguinText {
+  width: 300px;
+}
+
 .bodyTextandButton {
   display: flex;
   flex-direction: column;
@@ -96,7 +100,8 @@
   font-style: italic;
 }
 .picsAndText .penguinPics {
-  width: auto;
+  height: 150px;
+  width: 150px;
 }
 .picsAndText .infoWithPicsLeftAlign {
   display: flex;
