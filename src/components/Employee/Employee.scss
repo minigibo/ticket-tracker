@@ -1,0 +1,19 @@
+.employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9d7d7;
+  padding: 10px;
+  border: 2px solid slategrey;
+
+  .employee__count {
+    font-weight: 700;
+    color: #5d100a;
+    font-size: 1.5rem;
+  }
+
+  button {
+    margin: 5px;
+  }
+}
