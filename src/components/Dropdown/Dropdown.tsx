@@ -27,5 +27,3 @@ const Dropdown = ({
 };
 
 export default Dropdown;
-
-// trying to commit

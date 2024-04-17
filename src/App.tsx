@@ -1,12 +1,22 @@
-import Employee from "./components/Employee/Employee";
+import "./App.scss";
+import { useState, FormEvent } from "react";
 import team from "./data/team";
+import Employee from "./components/Employee/Employee";
 import SearchBox from "./components/Search/Search";
 import Dropdown from "./components/Dropdown/Dropdown";
-import { useState, FormEvent } from "react";
+
+type EmployeeCountMap = { [name: string]: number };
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedRole, setSelectedRole] = useState<string>("All");
+
+  const [ticketCounts, setTicketCounts] = useState<EmployeeCountMap>(
+    team.reduce<EmployeeCountMap>((acc, employee) => {
+      acc[employee.name] = 0;
+      return acc;
+    }, {})
+  );
 
   const roles = ["All", ...new Set(team.map((employee) => employee.role))];
 
@@ -17,6 +27,20 @@ const App = () => {
 
   const handleRoleSelect = (role: string) => {
     setSelectedRole(role);
+  };
+
+  const incrementTicketCount = (name: string) => {
+    setTicketCounts((prevCounts) => ({
+      ...prevCounts,
+      [name]: prevCounts[name] + 1,
+    }));
+  };
+
+  const decrementTicketCount = (name: string) => {
+    setTicketCounts((prevCounts) => ({
+      ...prevCounts,
+      [name]: Math.max(prevCounts[name] - 1, 0),
+    }));
   };
 
   const filteredTeam = team.filter(
@@ -30,15 +54,25 @@ const App = () => {
       <h1>Ticket Tracking System</h1>
       <div className="filter-container">
         <SearchBox searchTerm={searchTerm} handleInput={handleInput} />
-        <Dropdown
-          options={roles}
-          selectedOption={selectedRole}
-          onSelectOption={handleRoleSelect}
-        />
+        <div>
+          Filter by role
+          <Dropdown
+            options={roles}
+            selectedOption={selectedRole}
+            onSelectOption={handleRoleSelect}
+          />
+        </div>
       </div>
       <div className="employee-list">
-        {filteredTeam.map((team) => (
-          <Employee name={team.name} role={team.role} />
+        {filteredTeam.map((employee) => (
+          <Employee
+            key={employee.name}
+            name={employee.name}
+            role={employee.role}
+            ticketCount={ticketCounts[employee.name]}
+            incrementTicketCount={incrementTicketCount}
+            decrementTicketCount={decrementTicketCount}
+          />
         ))}
       </div>
     </div>
