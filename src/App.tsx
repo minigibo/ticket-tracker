@@ -11,12 +11,14 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedRole, setSelectedRole] = useState<string>("All");
 
-  const [ticketCounts, setTicketCounts] = useState<EmployeeCountMap>(
-    team.reduce<EmployeeCountMap>((acc, employee) => {
-      acc[employee.name] = 0;
-      return acc;
-    }, {})
-  );
+  const initialTicketCounts: EmployeeCountMap = {};
+
+  team.forEach((employee) => {
+    initialTicketCounts[employee.name] = 0;
+  });
+
+  const [ticketCounts, setTicketCounts] =
+    useState<EmployeeCountMap>(initialTicketCounts);
 
   const roles = ["All", ...new Set(team.map((employee) => employee.role))];
 
