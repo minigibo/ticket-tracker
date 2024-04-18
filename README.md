@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+# Ticket Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Ticket Tracker is a web application designed to help teams manage and track tickets efficiently. It provides a user-friendly interface for tracking tickets assigned to different team members.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Track tickets assigned to team members.
+- Increment and decrement ticket counts per employee.
+- Filter tickets by employee name and role.
+- Responsive design for seamless usage across various devices.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Used for building the frontend interface and managing components.
+- **TypeScript**: Used in combination with react to dynamically generate the structure.
+- **SCSS**: Used for styling the user interface.
+- **HTML**: Used for structuring the layout and content of the application, generated dynamically with react.
 
-- Configure the top-level `parserOptions` property like this:
+## How to Use
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Use the search box to filter tickets by employee name.
+- Use the dropdown menu to filter tickets by employee role.
+- Increment or decrement ticket counts using the buttons provided.
+- Track tickets assigned to team members in real-time.
